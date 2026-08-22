@@ -1,0 +1,14 @@
+.ledger-table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  .ledger-table th, 
+  .ledger-table td {
+    border: 1px solid #e5e7eb;
+    padding: 0.75rem;
+  }
+  
+  .ledger-table tr:not(:last-child) {
+    border-bottom: 1px solid #e5e7eb;
+  }
