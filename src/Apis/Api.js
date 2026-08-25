@@ -9,8 +9,8 @@ import axios from "axios";
 const useLocalBackend = process.env.REACT_APP_USE_LOCAL_BACKEND === "true";
 
 export const baseURL = useLocalBackend
-  ? "http://localhost:5000"
-  : (process.env.REACT_APP_API_URL || "https://api.pranucollection.com");
+  ? (process.env.REACT_APP_API_URL || "http://localhost:5000")
+  : "https://api.pranucollection.com";
 
 export const imageBaseURL = baseURL;
 
@@ -307,6 +307,9 @@ export const getAllVendorsApi = () => Api.get("/api/vendors");
 export const getStaffByVendorApi = (vendorId) => Api.get(`/api/vendors/${vendorId}/staff`);
 export const getMyStaffApi = () => Api.get("/api/my-staff");
 export const createManagedUserApi = (userData) => Api.post("/api/users", userData);
+export const updateVendorApi = (id, data) => Api.put(`/api/users/${id}`, data);
+export const deleteVendorApi = (id) => Api.delete(`/api/users/${id}`);
+export const deleteStaffByAdminApi = (id) => Api.delete(`/api/users/${id}`);
 
 // Staff Feature Access Control & Activity Log APIs
 export const getVendorStaffPermissionsApi = () => Api.get("/api/staff-permissions");
